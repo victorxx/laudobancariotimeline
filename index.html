@@ -200,11 +200,56 @@
     <a href="https://sorteioloteriamegatime.vercel.app/" target="_blank" class="link-mega">
       🎰 Confira os números da Mega Sena
     </a>
+    <br>
+    <!--------------relogio-->
+     <div id="relogio"></div>
+      <!--------------relogio-->
   </div>
+ 
 
   <!-- JavaScript para inserir notícias -->
   <script>
     const noticias = [
+                                {
+                                    "titulo": "Nova regulamentação para laudos periciais bancários",
+                                    "texto": "O governo anunciou novas regras para garantir mais transparência nos laudos periciais bancários."
+                                },
+                                {
+                                    "titulo": "Laudos periciais digitais ganham reconhecimento legal",
+                                    "texto": "Tribunais começam a aceitar laudos periciais em formato digital, acelerando processos judiciais."
+                                },
+                                {
+                                    "titulo": "Especialistas destacam importância da perícia técnica em laudos",
+                                    "texto": "Profissionais reforçam que laudos periciais bem fundamentados são essenciais para decisões judiciais precisas."
+                                },
+                                {
+                                    "titulo": "Cresce demanda por laudos periciais ambientais no país",
+                                    "texto": "Aumento das questões ambientais impulsiona a necessidade de laudos técnicos para embasar ações legais."
+                                },
+                                {
+                                    "titulo": "Peritos alertam sobre fraudes em laudos periciais",
+                                    "texto": "Casos recentes de falsificação de laudos chamam atenção para a necessidade de fiscalização rigorosa."
+                                },
+                                {
+                                    "titulo": "Laudos periciais em acidentes de trânsito passam por atualização",
+                                    "texto": "Novos protocolos foram adotados para melhorar a precisão dos laudos em acidentes automobilísticos."
+                                },
+                                {
+                                    "titulo": "Instituições investem em tecnologia para aprimorar laudos periciais",
+                                    "texto": "Uso de inteligência artificial começa a ser incorporado para análise e elaboração de laudos mais detalhados."
+                                },
+                                {
+                                    "titulo": "Formação contínua é destaque para peritos em laudos periciais",
+                                    "texto": "Cursos e especializações garantem que peritos estejam atualizados com as melhores práticas do setor."
+                                },
+                                {
+                                    "titulo": "Laudos periciais contábeis ganham maior relevância em disputas comerciais",
+                                    "texto": "A precisão dos laudos contábeis tem sido decisiva em processos de litígio empresarial."
+                                },
+                                {
+                                    "titulo": "Mudanças na legislação afetam prazos para entrega de laudos periciais",
+                                    "texto": "Novas normas estipulam prazos mais rigorosos para a finalização dos laudos em processos judiciais."
+                                },
                             {
                                 titulo: "Nova regulamentação para laudos periciais bancários",
                                 texto: "O governo anunciou novas regras para garantir mais transparência nos laudos periciais bancários."
@@ -272,5 +317,42 @@
       newsList.appendChild(li);
     });
   </script>
+  <!----------------randomizador-->
+  <script>
+
+  // Função para gerar string aleatória
+  function gerarID(tamanho = 400) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:,.<>?';
+    let resultado = '';
+    for (let i = 0; i < tamanho; i++) {
+      resultado += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return resultado;
+  }
+
+  // Criar elemento e adicionar ao fim do body
+  const idUnico = gerarID(20); // 20 caracteres, pode ajustar o tamanho
+  const elemento = document.createElement('div');
+  elemento.style.cssText = 'font-family: monospace; color: #888; font-size: 0.8rem; padding: 10px; text-align: center; user-select: all;';
+  elemento.textContent = `ID Único da Página: ${idUnico}`;
+
+  document.body.appendChild(elemento);
+</script>
+<!----------------randomizador-->
+
+
+<script>
+    function atualizarRelogio() {
+        const agora = new Date();
+        const horas = String(agora.getHours()).padStart(2, '0');
+        const minutos = String(agora.getMinutes()).padStart(2, '0');
+        const texto = `Atualizado às ${horas}:${minutos}`;
+        document.getElementById('relogio').textContent = texto;
+    }
+
+    atualizarRelogio();
+    setInterval(atualizarRelogio, 60000);
+</script>
+
 </body>
 </html>
